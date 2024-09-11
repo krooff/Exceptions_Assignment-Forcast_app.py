@@ -1,0 +1,55 @@
+#Task1: Ask the User for the Temperature in Fahrenheit
+
+def get_fahrenheit_input():
+    try:
+        fahrenheit = float(input("Please enter the temperature in Fahrenheit: "))
+        return fahrenheit
+    except ValueError:
+        print("Invalid input! Please enter a numerical value.")
+        return None
+#Task2: Convert Fahrenheit to Celsius
+
+def convert_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
+#Task3: User-Friendly Output and Handling Unexpected Input
+
+def weather_forecast():
+    fahrenheit = get_fahrenheit_input()
+    
+    if fahrenheit is not None:
+        try:
+            celsius = convert_to_celsius(fahrenheit)
+        except Exception as e:
+            print(f"An error occurred during conversion: {e}")
+        else:
+            print(f"{fahrenheit} degrees Fahrenheit is {celsius:.2f} degrees Celsius.")
+        finally:
+            print("Thank you for using the weather forecast application!")
+
+#Task4: The finally Block
+def get_fahrenheit_input():
+    try:
+        fahrenheit = float(input("Please enter the temperature in Fahrenheit: "))
+        return fahrenheit
+    except ValueError:
+        print("Invalid input! Please enter a numerical value.")
+        return None
+
+def convert_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * 5 / 9
+
+def weather_forecast():
+    fahrenheit = get_fahrenheit_input()
+    
+    if fahrenheit is not None:
+        try:
+            celsius = convert_to_celsius(fahrenheit)
+        except Exception as e:
+            print(f"An error occurred during conversion: {e}")
+        else:
+            print(f"{fahrenheit} degrees Fahrenheit is {celsius:.2f} degrees Celsius.")
+        finally:
+            print("Thank you for using the weather forecast application!")
+
+# Run the application
+weather_forecast()
